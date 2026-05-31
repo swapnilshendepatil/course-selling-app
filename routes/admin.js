@@ -14,13 +14,13 @@ adminRouter.post("/signin", (req, res) => {
   });
 });
 
-adminRouter.post("/course", (req, res) => {
+adminRouter.post("/", (req, res) => {
   res.json({
     message: "Admin signin endpoint",
   });
 });
 
-adminRouter.put("/course", (req, res) => {
+adminRouter.put("/", (req, res) => {
   res.json({
     message: "Admin signin endpoint",
   });
