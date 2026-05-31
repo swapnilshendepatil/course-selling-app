@@ -1,13 +1,13 @@
-const express=require('express')
-const {userRouter} = require('./routes/user')
-const {courseRouter} = require('./routes/courses')
-const {adminRouter} = require('./routes/admin')
-const app=express();
+const express = require("express");
+const { userRouter } = require("./routes/user");
+const { courseRouter } = require("./routes/courses");
+const { adminRouter } = require("./routes/admin");
+const app = express();
+app.use(express.json());
+app.use("/user", userRouter);
+app.use("/admin", adminRouter);
+app.use("/courses", courseRouter);
 
-app.use('/user',userRouter)
-app.use('/admin',adminRouter)
-app.use('/courses',courseRouter)
-
-app.listen(3000,()=>{
-    console.log(`server on listen port ${3000}`)
-})
+app.listen(3000, () => {
+  console.log(`server on listen port ${3000}`);
+});
